@@ -2,7 +2,7 @@ import React from "react";
 import "./App.scss";
 import { Provider } from "react-redux";
 
-import News from "../components/pages/news/News.component.jsx";
+import Homepage from "../components/pages/homepage/Homepage.component.jsx";
 import store from "../redux/store";
 
 class App extends React.Component {
@@ -10,7 +10,9 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <News />
+          <div className="page_wrapper">
+            <Homepage />
+          </div>
         </div>
       </Provider>
     );

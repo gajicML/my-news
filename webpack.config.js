@@ -1,8 +1,10 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isDevelopment = process.env.NODE_ENV === "development";
+const webpack = require("webpack");
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+require("dotenv").config();
 
 module.exports = {
   entry: "./src/index.js",
@@ -72,5 +74,6 @@ module.exports = {
       filename: isDevelopment ? "[name].css" : "[name].[hash].css",
       chunkFilename: isDevelopment ? "[id].css" : "[id].[hash].css",
     }),
+    new webpack.EnvironmentPlugin(["NODE_ENV", "REACT_APP_NEWS_API_KEY"]),
   ],
 };
