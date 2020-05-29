@@ -1,9 +1,19 @@
 import React from "react";
 import "./App.css";
+import { Provider } from "react-redux";
+
+import News from "../components/pages/news/News.component.jsx";
+import store from "../redux/store";
 
 class App extends React.Component {
   render() {
-    return <div className="App">App</div>;
+    return (
+      <Provider store={store}>
+        <div className="App">
+          <News />
+        </div>
+      </Provider>
+    );
   }
 }
 
