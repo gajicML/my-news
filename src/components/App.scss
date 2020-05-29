@@ -1,18 +1,24 @@
 .App {
   font-family: "Open Sans Condensed", sans-serif;
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+
+  & .page_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  & .navbar_wrapper {
+    background-color: #ffffff;
+  }
 }
 
 body {
   margin: 0;
   box-sizing: border-box;
-}
-
-.page_wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 80px;
-  max-width: 1400px;
-  margin: 0 auto;
 }

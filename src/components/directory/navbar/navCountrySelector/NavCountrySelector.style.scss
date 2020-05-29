@@ -1,0 +1,15 @@
+.navCountrySelector {
+  display: flex;
+  margin-left: auto;
+
+  & .country {
+    padding: 10px;
+    font-size: 23px;
+
+    &:hover {
+      background-color: #d81e29;
+      color: #fff;
+      border-radius: 30px 0 30px 30px;
+    }
+  }
+}
