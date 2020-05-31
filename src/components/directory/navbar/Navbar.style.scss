@@ -28,6 +28,15 @@
         transform: scale(0.9);
         color: #d81e29;
       }
+
+      & a {
+        color: #000;
+        text-decoration: none;
+      }
     }
+  }
+
+  & .selected {
+    color: red;
   }
 }

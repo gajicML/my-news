@@ -2,6 +2,7 @@
   font-family: "Open Sans Condensed", sans-serif;
   display: flex;
   flex-direction: column;
+  background-color: #f9f9f9;
 
   & .page_wrapper {
     display: flex;
@@ -10,7 +11,6 @@
     padding: 20px 80px;
     max-width: 1400px;
     margin: 0 auto;
-    background-color: #f9f9f9;
   }
 
   & .navbar_wrapper {

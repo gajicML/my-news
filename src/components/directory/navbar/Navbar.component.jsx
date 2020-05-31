@@ -1,18 +1,33 @@
 import React from "react";
-import "./Navbar.style.scss";
+import { NavLink } from "react-router-dom";
+
 import logo from "../../../assets/logo.png";
 import NavCountrySelector from "./navCountrySelector/NavCountrySelector.component.jsx";
-import PropTypes from "prop-types";
+import "./Navbar.style.scss";
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="logo" style={{ backgroundImage: `url(${logo})` }}></div>
+      <NavLink to="/">
+        {" "}
+        <div className="logo" style={{ backgroundImage: `url(${logo})` }}></div>
+      </NavLink>
+
       <nav>
         <ul>
-          <li>Top News</li>
-          <li>Categories</li>
-          <li>Search</li>
+          <li>
+            <NavLink to="/">Top News</NavLink>
+          </li>
+          <li>
+            <NavLink to="/categories" activeClassName="selected">
+              Categories
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/search" activeClassName="selected">
+              Search
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <NavCountrySelector />

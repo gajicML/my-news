@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import "./PreviewArticle.style.scss";
 import noImg from "../../../assets/noImg.jpg";
 
-const PreviewArticle = ({ title, description, urlToImage, content }) => {
+const PreviewArticle = (props) => {
+  const { title, description, urlToImage, content } = props;
+  // console.log(props);
   const bg = urlToImage ? urlToImage : noImg;
   const myStyle = {
     backgroundImage: `url(${bg})`,
@@ -23,10 +25,10 @@ const PreviewArticle = ({ title, description, urlToImage, content }) => {
 };
 
 PreviewArticle.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  urlToImage: PropTypes.string.isRequired,
-  // content: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  urlToImage: PropTypes.string,
+  content: PropTypes.string,
 };
 
 export default PreviewArticle;
