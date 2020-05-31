@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import newsReducer from "./reducers";
+import rootReducers from "./reducers";
 
 const initState = {};
 
@@ -9,7 +9,7 @@ const middleware = [thunk];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  newsReducer,
+  rootReducers,
   initState,
   composeEnhancers(applyMiddleware(...middleware))
 );
