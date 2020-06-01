@@ -1,0 +1,26 @@
+.category {
+  & h1 {
+    text-align: center;
+  }
+  & img {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    display: block;
+  }
+  & .description {
+    text-align: center;
+    font-size: 24px;
+  }
+  & .author {
+    font-style: italic;
+  }
+  & .content {
+    font-size: 22px;
+  }
+
+  & .goBack {
+    cursor: pointer;
+    color: cornflowerblue;
+  }
+}

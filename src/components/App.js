@@ -7,6 +7,7 @@ import store from "../redux/store";
 import Homepage from "../components/pages/homepage/Homepage.component.jsx";
 import Categories from "../components/pages/categories/Categories.component.jsx";
 import Category from "../components/pages/category/Category.component.jsx";
+import Article from "../components/pages/article/Article.component.jsx";
 import Search from "../components/pages/search/Search.component.jsx";
 import Navbar from "../components/directory/navbar/Navbar.component.jsx";
 
@@ -24,9 +25,10 @@ class App extends React.Component {
               <Route exact path="/" component={Homepage} />
 
               <Route path="/categories" component={Categories} />
+
               <Route path="/categories/:id" component={Category} />
 
-              <Route path="/articles/:id" component={Category} />
+              <Route path="/articles/:id" component={Article} />
 
               <Route path="/search" component={Search} />
             </Switch>

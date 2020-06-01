@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./PreviewArticle.style.scss";
 import noImg from "../../../assets/noImg.jpg";
+import { Link, withRouter } from "react-router-dom";
 
 const PreviewArticle = (props) => {
-  const { title, description, urlToImage, content } = props;
-  // console.log(props);
+  const { title, description, urlToImage, id } = props;
+
   const bg = urlToImage ? urlToImage : noImg;
   const myStyle = {
     backgroundImage: `url(${bg})`,
@@ -18,7 +19,18 @@ const PreviewArticle = (props) => {
         <h1 className="title">{title}</h1>
         <p className="description">{description}</p>
 
-        <p className="more">More ></p>
+        <Link
+          to={{
+            pathname: `/articles/${title
+              .replace(/[^a-zA-Z ]/g, "")
+              .split(" ")
+              .join("_")
+              .substring(0, 40)}`,
+            articleId: id,
+          }}
+        >
+          <p className="more">More ></p>
+        </Link>
       </div>
     </div>
   );
@@ -31,4 +43,4 @@ PreviewArticle.propTypes = {
   content: PropTypes.string,
 };
 
-export default PreviewArticle;
+export default withRouter(PreviewArticle);
