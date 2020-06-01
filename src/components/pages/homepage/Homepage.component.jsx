@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import "./Homepage.style.scss";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchTopNews } from "../../../redux/actions/fetchActions";
+import { fetchtopArticles } from "../../../redux/actions/fetchActions";
 import PreviewArticle from "../../directory/preview-article/PreviewArticle.component.jsx";
 import Loading from "../../directory/loading/Loading.component.jsx";
 
-const Homepage = ({ news, activeCountry, fetchTopNews, dataLoading }) => {
+const Homepage = ({ news, activeCountry, fetchtopArticles, dataLoading }) => {
   useEffect(() => {
-    fetchTopNews(activeCountry);
+    fetchtopArticles(activeCountry);
   }, [activeCountry]);
 
   const country = activeCountry === "GB" ? "Great Britain" : "United States";
@@ -28,7 +28,7 @@ const Homepage = ({ news, activeCountry, fetchTopNews, dataLoading }) => {
 };
 
 Homepage.propTypes = {
-  fetchTopNews: PropTypes.func,
+  fetchtopArticles: PropTypes.func,
   news: PropTypes.array,
   dataLoading: PropTypes.bool,
   activeCountry: PropTypes.string,
@@ -42,4 +42,4 @@ const mapStateToProps = (state) => {
     dataLoading: state.news.dataLoading,
   };
 };
-export default connect(mapStateToProps, { fetchTopNews })(Homepage);
+export default connect(mapStateToProps, { fetchtopArticles })(Homepage);

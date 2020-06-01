@@ -1,9 +1,23 @@
-import { FETCH_NEWS, COUNTRY } from "../actions/typesConstants";
+import {
+  FETCH_NEWS,
+  COUNTRY,
+  CATEGORY,
+  ADDITIONAL,
+} from "../actions/typesConstants";
 
 const initialState = {
   topArticles: [],
   activeCountry: "GB",
   dataLoading: false,
+  categories: [
+    "entertainment",
+    "general",
+    "health",
+    "science",
+    "sport",
+    "technology",
+  ],
+  activeCategory: "",
 };
 
 export default function (state = initialState, action) {
@@ -20,9 +34,25 @@ export default function (state = initialState, action) {
     case COUNTRY.SELECT:
       return { ...state, activeCountry: action.payload.country };
 
+    case FETCH_NEWS.CATEGORIES:
+      return {
+        ...state,
+        topArticles: state.topArticles.concat(action.payload),
+      };
+
+    case CATEGORY.SET_ACTIVE:
+      return {
+        ...state,
+        activeCategory: actions.payload,
+      };
+
+    case ADDITIONAL.REFRESH_ARTICLES:
+      return {
+        ...state,
+        topArticles: action.payload,
+      };
+
     default:
       return state;
   }
 }
-
-import {} from "../actions/typesConstants";

@@ -4,7 +4,7 @@ import instance from "../../apis/newsapi.instance";
 const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 import cuid from "cuid";
 
-export const fetchTopNews = (country) => (dispatch) => {
+export const fetchtopArticles = (country) => (dispatch) => {
   dispatch({ type: FETCH_NEWS.LOAD });
 
   instance
@@ -37,3 +37,34 @@ const fetchFail = () => {
     return { type: FETCH_NEWS.FAIL, payload: true };
   };
 };
+
+export const fetchCategories = (categories, country) => (dispatch) => {
+  categories.forEach((category) => {
+    dispatch({ type: FETCH_NEWS.LOAD });
+
+    instance
+      .get(
+        `top-headlines/?country=${country}&category=${category}&apiKey=${API_KEY}`
+      )
+      .then((data) => {
+        const articles = data["data"]["articles"].map((article) => {
+          return {
+            ...article,
+            id: cuid(),
+            category: category,
+          };
+        });
+
+        dispatch(fetchSuccessCategories(articles));
+      })
+      .catch((error) => {
+        dispatch(fetchFail());
+        console.error(error);
+      });
+  });
+};
+
+const fetchSuccessCategories = (item) => ({
+  type: FETCH_NEWS.CATEGORIES,
+  payload: [...item],
+});
