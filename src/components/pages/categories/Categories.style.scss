@@ -1,0 +1,10 @@
+.categories-title {
+  font-weight: normal;
+}
+
+@media (max-width: 479px) {
+  .categories-title {
+    font-size: 20px;
+    margin: 0 0 10px;
+  }
+}

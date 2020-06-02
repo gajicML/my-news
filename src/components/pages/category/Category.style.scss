@@ -4,3 +4,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.goBackCategory {
+  cursor: pointer;
+  align-self: flex-start;
+  &:hover {
+    font-weight: bold;
+  }
+}

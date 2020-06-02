@@ -10,3 +10,10 @@
   margin: 0 0 30px;
   align-self: flex-start;
 }
+
+@media (max-width: 479px) {
+  .top_country {
+    font-size: 20px;
+    margin: 0 0 10px;
+  }
+}

@@ -22,3 +22,19 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+@media (max-width: 999px) {
+  .App {
+    & .page_wrapper {
+      padding: 20px 20px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .App {
+    & .page_wrapper {
+      padding: 10px;
+    }
+  }
+}
