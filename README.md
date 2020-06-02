@@ -1,14 +1,22 @@
 # my-news
 
-My-news is a news application that uses [NewsApi](https://newsapi.org/) as a source.
+My-news is a news application that uses [NewsApi](https://newsapi.org/) as a source. The app has the ability to display news from the US and UK.
+
+## Base Technologies
+
+React with Redux
 
 ## Instalation
 
 ```bash
 git clone https://github.com/gajicML/my-news.git
-register on [NewsApi](https://newsapi.org/register) to get the key
+
+register on NewsApi to get the key
+
 npm install
+
 copy key to .env file
+
 npm start
 ```
 
