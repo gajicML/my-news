@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { fetchtopArticles } from "../../../redux/actions/fetchActions";
 import PreviewArticle from "../../directory/preview-article/PreviewArticle.component.jsx";
 import Loading from "../../directory/loading/Loading.component.jsx";
+import ErrorBoundary from "../../directory/errorBoundary/ErrorBoundary.component.jsx";
 
 const Homepage = ({ news, activeCountry, fetchtopArticles, dataLoading }) => {
   useEffect(() => {
@@ -35,7 +36,7 @@ Homepage.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  // console.log(state);
+  console.log(state);
   return {
     news: state.news.topArticles,
     activeCountry: state.news.activeCountry,

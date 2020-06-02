@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import "./Categories.style.scss";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import Category from "../category/Category.component.jsx";
+
 import { fetchCategories } from "../../../redux/actions/fetchActions";
 import { refreshArticles } from "../../../redux/actions/otherActions";
 import Accordion from "../../directory/accordion/Accordion.component.jsx";
-
-import { Route, Link, withRouter } from "react-router-dom";
+import Loading from "../../directory/loading/Loading.component.jsx";
 
 const Categories = ({
   news,
@@ -15,11 +15,15 @@ const Categories = ({
   fetchCategories,
   refreshArticles,
   categories,
+  dataLoading,
+  error,
 }) => {
   useEffect(() => {
     fetchCategories(categories, activeCountry);
     refreshArticles();
   }, [activeCountry]);
+
+  console.log(error);
 
   const renderCategories = categories.map((category, index) => {
     let articleBlock = [];
@@ -37,15 +41,26 @@ const Categories = ({
     );
   });
 
-  return (
+  const renderComponent = dataLoading ? (
+    <Loading />
+  ) : (
     <>
       <h1 className="title">{`Top 5 news by category from ${activeCountry}`}</h1>
       {renderCategories};
     </>
   );
+
+  return renderComponent;
 };
+
 Categories.propTypes = {
+  dataLoading: PropTypes.bool,
   fetchCategories: PropTypes.func,
+  news: PropTypes.array,
+  activeCountry: PropTypes.string,
+  refreshArticles: PropTypes.func,
+  categories: PropTypes.array,
+  error: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {
@@ -55,6 +70,8 @@ const mapStateToProps = (state) => {
     activeCountry: state.news.activeCountry,
     categoryNews: state.news.categoryNews,
     categories: state.news.categories,
+    dataLoading: state.news.dataLoading,
+    error: state.news.error,
   };
 };
 
