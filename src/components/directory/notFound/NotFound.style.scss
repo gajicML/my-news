@@ -1,0 +1,10 @@
+.not-found {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans Condensed", sans-serif;
+  & h1 {
+    font-size: 45px;
+  }
+
+  text-align: center;
+}
