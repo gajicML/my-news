@@ -10,13 +10,17 @@ React with Redux
 
 ```bash
 git clone https://github.com/gajicML/my-news.git
+```
 
-register on NewsApi to get the key
+Register on NewsApi to get the key
 
+```bash
 npm install
+```
 
-copy key to .env file
+Copy key to .env file
 
+```bash
 npm start
 ```
 
