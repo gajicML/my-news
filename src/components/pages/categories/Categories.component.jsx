@@ -16,14 +16,11 @@ const Categories = ({
   refreshArticles,
   categories,
   dataLoading,
-  error,
 }) => {
   useEffect(() => {
     fetchCategories(categories, activeCountry);
     refreshArticles();
   }, [activeCountry]);
-
-  console.log(error);
 
   const renderCategories = categories.map((category, index) => {
     let articleBlock = [];
@@ -45,7 +42,7 @@ const Categories = ({
     <Loading />
   ) : (
     <>
-      <h1 className="title">{`Top 5 news by category from ${activeCountry}`}</h1>
+      <h1 className="categories-title">{`Top 5 news by category from ${activeCountry}`}</h1>
       {renderCategories};
     </>
   );
@@ -60,7 +57,6 @@ Categories.propTypes = {
   activeCountry: PropTypes.string,
   refreshArticles: PropTypes.func,
   categories: PropTypes.array,
-  error: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {

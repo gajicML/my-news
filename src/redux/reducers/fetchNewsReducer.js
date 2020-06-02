@@ -22,6 +22,7 @@ const initialState = {
     "sport",
     "technology",
   ],
+  searchTerm: "",
 };
 
 export default function (state = initialState, action) {
@@ -52,6 +53,13 @@ export default function (state = initialState, action) {
         dataLoading: false,
       };
 
+    case FETCH_NEWS.SEARCH:
+      return {
+        ...state,
+        topArticles: action.payload["articles"],
+        searchTerm: action.payload["searchTerm"],
+        dataLoading: false,
+      };
     case CATEGORY.SET_ACTIVE:
       return {
         ...state,

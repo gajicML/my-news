@@ -41,7 +41,7 @@ NavCountrySelector.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log("state in NAV COUNTRY SELECTOR", state.news.buttonsActive);
+  // console.log("state in NAV COUNTRY SELECTOR", state.news.buttonsActive);
   return {
     activeCountry: state.news.activeCountry,
     buttonsActive: state.news.buttonsActive,

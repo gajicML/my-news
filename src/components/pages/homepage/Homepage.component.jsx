@@ -36,7 +36,7 @@ Homepage.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
+  // console.log(state);
   return {
     news: state.news.topArticles,
     activeCountry: state.news.activeCountry,

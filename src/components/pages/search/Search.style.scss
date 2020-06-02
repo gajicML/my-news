@@ -1,0 +1,26 @@
+.search_result {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search-input {
+  & input {
+    padding: 10px;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 25px;
+    width: 300px;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 479px) {
+  .search-input {
+    font-size: 20px;
+    width: 260px;
+  }
+}
