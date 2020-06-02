@@ -45,7 +45,11 @@ const Accordion = (props) => {
       <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
         <div className="accordion__title">
           {" "}
-          <Link to="/">
+          <Link
+            to={{
+              pathname: `/categories/${props.category}`,
+            }}
+          >
             <p className="title" onClick={props.setActiveCategory}>
               {props.category}
             </p>
