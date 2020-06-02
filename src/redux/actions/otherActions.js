@@ -6,3 +6,10 @@ export const refreshArticles = () => (dispatch) => {
     payload: [],
   });
 };
+
+export const toggleButtons = (active) => (dispatch) => {
+  dispatch({
+    type: ADDITIONAL.TOGGLE_BUTTONS,
+    payload: active,
+  });
+};
