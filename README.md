@@ -8,19 +8,24 @@ React with Redux
 
 ## Instalation
 
-1. ```bash
+1. 
+```bash
 git clone https://github.com/gajicML/my-news.git
 ```
 
-2. Register on NewsApi to get the key
+2.
+Register on NewsApi to get the key
 
-3. ```bash
+3. 
+```bash
 npm install
 ```
 
-4. Copy key to .env file
+4. 
+Copy key to .env file
 
-5. ```bash
+5. 
+```bash
 npm start
 ```
 
